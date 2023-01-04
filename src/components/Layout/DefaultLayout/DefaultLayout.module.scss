@@ -4,12 +4,9 @@
     align-items: center;
 }
 .container {
-    width: 1150px;
-    min-height: 1000px;
+    width: var(--default-layout-width);
     display: flex;
 }
 .content {
     flex: 1;
-    background-color: #fff;
-    min-height: 1000px;
 }
