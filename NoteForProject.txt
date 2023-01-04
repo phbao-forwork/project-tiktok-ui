@@ -144,4 +144,18 @@ Cấu hình sử dụng CSS, SASS:
         link: https://www.npmjs.com/package/normalize.css?activeTab=versions
 
     4. Default CSS: font-family, font-size, line-height
+
+Cấu hình Router và xây dựng cơ chế tải Layout cho dự án:
+    1. Phân tích tổng quan Layout (trang tiktok)
+        header
+        container
+            sidebar (left)
+            content (right)
+
+    2. Cài đặt react-router-dom
+        npm i react-router-dom
+        link: https://reactrouter.com/en/main/start/tutorial
         
+    3. Đưa cấu hình routes ra ngoài
+            
+    4. Xây dựng cơ chế tải Layout
