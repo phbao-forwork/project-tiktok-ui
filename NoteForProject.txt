@@ -85,3 +85,63 @@ Use babelrc
 
     link: https://github.com/arackaf/customize-cra/blob/master/api.md#usebabelrc
 
+Cấu hình Prettier:
+    Tạo file root/.prettier với nội dung như sau:
+
+    {
+        "arrowParens": "always",
+        "bracketSameLine": false,
+        "bracketSpacing": true,
+        "embeddedLanguageFormatting": "auto",
+        "htmlWhitespaceSensitivity": "css",
+        "insertPragma": false,
+        "jsxSingleQuote": false,
+        "printWidth": 120,
+        "proseWrap": "preserve",
+        "quoteProps": "as-needed",
+        "requirePragma": false,
+        "semi": true,
+        "singleQuote": true,
+        "tabWidth": 4,
+        "trailingComma": "all",
+        "useTabs": false,
+        "vueIndentScriptAndStyle": false
+    }
+
+    Tiếp tục tạo thư mục root/.vscode/settings.json với nội dung như sau:
+
+    {
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
+
+    Nếu không muốn đẩy thử mục .vscode lên git:
+        -> .gitignore -> # dependencies -> thêm .vscode
+
+Cấu hình sử dụng CSS, SASS:
+    1. Create Globle styles component
+        Tạo thư mục root/component/GlobleStyles:
+            Trong thư mục này tạo 2 files GlobleStyles.scss và index.js
+                Nội dung:
+                    index.js:
+                        import './GlobleStyles.scss';
+
+                        function GlobleStyles({ children }) {
+                            return children;
+                        }
+
+                        export default GlobleStyles;
+                    => Rồi sau đó vào file index.js ở thư mục gốc, import nó vào và cho nó ôm component <App />
+
+    2. Cài đặt thư viện:
+        npm i -D sass 
+    3. Reset CSS:
+        npm i --save normalize.css
+
+        Sau khi cài đặt thư viện thì vào file GlobleStyles.scss import nó vào như sau:
+            @import 'normalize.css';
+
+        link: https://www.npmjs.com/package/normalize.css?activeTab=versions
+
+    4. Default CSS: font-family, font-size, line-height
+        
