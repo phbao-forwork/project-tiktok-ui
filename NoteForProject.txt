@@ -1,0 +1,87 @@
+Khởi tạo dự án: 
+    npx create-react-app project-tiktok-clone
+
+Lưu ý với dự án bị trùng PORT:
+    Tạo một file .env.local trong file PORT=3001 => Rồi chạy lại dự án
+
+Fix một số lỗi github có thể xảy ra, khi mà tài khoản git được cài ở máy:
+    -> Control panel -> User accounts -> Credential manager -> Windows Credentials
+    remove các tài khoản github trước đó.
+
+Cài đặt customize-cra:
+    npm i customize-cra react-app-rewired -D
+
+    Sau khi cài đặt tạo file root/config-overrides.js với nội dung sau:
+
+        /* config-overrides.js */
+
+        module.exports = function override(config, env) {
+            //do stuff with the webpack config...
+            return config;
+        }
+
+    Thay đổi file package.json như sau:
+    (- remove, + add)
+
+        /* package.json */
+
+        "scripts": {
+        -   "start": "react-scripts start",
+        +   "start": "react-app-rewired start",
+        -   "build": "react-scripts build",
+        +   "build": "react-app-rewired build",
+        -   "test": "react-scripts test",
+        +   "test": "react-app-rewired test",
+            "eject": "react-scripts eject"
+        }    
+
+    link hướng dẫn: https://github.com/timarney/react-app-rewired/
+
+Cài đặt babel plugin module resolver:
+    npm install --save-dev babel-plugin-module-resolver
+    
+    Sau khi cài đặt tạo file root/.babelrc với nội dung như sau:
+
+        {
+            "plugins": [
+                ["module-resolver", {
+                    "alias": {
+                        "~": "./src",
+                    }
+                }]
+            ]
+        }
+
+        *note: dấu ~ đại diện cho thư mục src
+    
+    Tạo thêm một file Edit autocompletion root/jsconfig.json với nội dung như sau:
+
+        {
+            "compilerOptions": {
+                "baseUrl": ".",
+                "paths": {
+                    "~/*": ["src/*"],
+                }
+            }
+        }
+
+Tùy chỉnh file config-overrides.js cho babel
+    Copy phần example đầu tiên vào file (Example With Webpack)
+    Chừa lại phần nội dung cần thiết như sau:
+
+        const { override } = require("customize-cra");
+        module.exports = override();
+
+    link: https://github.com/arackaf/customize-cra
+
+Use babelrc
+    import useBabelrc vào trong file config-overrides.js:
+
+    const { override, useBabelRc } = require("customize-cra");
+    module.exports = override(
+        // eslint-disable-next-line react-hooks/rules-of-hooks
+        useBabelRc()
+    );
+
+    link: https://github.com/arackaf/customize-cra/blob/master/api.md#usebabelrc
+
