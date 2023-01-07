@@ -1,5 +1,3 @@
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import classNames from 'classnames/bind';
 import { Link } from 'react-router-dom';
 import style from './Button.module.scss';
@@ -13,10 +11,12 @@ function Button({
     outline,
     text,
     rounded,
+    icon,
     disabled,
     large,
     small,
     children,
+    className,
     onClick,
     ...passProps
 }) {
@@ -39,6 +39,7 @@ function Button({
     }
 
     const classes = cx('wrapper', {
+        [className]: className,
         primary,
         outline,
         text,
@@ -50,7 +51,7 @@ function Button({
 
     return (
         <Comp className={classes} {...props}>
-            {text && <FontAwesomeIcon className={cx('plus')} icon={faPlus} />}
+            {icon && <span className={cx('plus')}>{icon}</span>}
             <span>{children}</span>
         </Comp>
     );
