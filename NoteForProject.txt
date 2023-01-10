@@ -86,7 +86,7 @@ Use babelrc
     link: https://github.com/arackaf/customize-cra/blob/master/api.md#usebabelrc
 
 Cấu hình Prettier:
-    Tạo file root/.prettier với nội dung như sau:
+    Tạo file root/.prettierrc với nội dung như sau:
 
     {
         "arrowParens": "always",
