@@ -176,6 +176,7 @@ Dựng khung DefaultLayout dự án tiktok
         Ctrl + D chọn nhiều cụm từ giống nhau
         Ctrl + Shift + <mũi tên ngang>
         Giữ phím Alt + <click>
+        Alt + W
 
 Cài đặt thư viện hỗ trợ input search
     link: https://www.npmjs.com/package/@tippyjs/react
