@@ -27,6 +27,7 @@ import styles from './Header.module.scss';
 import images from '~/assets/images';
 import AccountItem from '~/components/AccountItem';
 import Menu from '~/components/Popper/Menu';
+import Image from '~/components/Image';
 
 // trả ra một function cx()
 const cx = classNames.bind(styles);
@@ -149,7 +150,7 @@ function Header() {
                     )}
                     <Menu items={currentUser ? userMenus : MENU_ITEMS} onChange={handleMenuChange}>
                         {currentUser ? (
-                            <img
+                            <Image
                                 className={cx('user-avatar')}
                                 src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/b29b52a6cbffbf50e88b575f8f358583~c5_100x100.jpeg?x-expires=1673186400&x-signature=9W5AvmSgoSdVXp8BEpJV%2BH06Mmw%3D"
                                 alt="Nguyen Thi Cam Ly"

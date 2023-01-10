@@ -183,3 +183,6 @@ Cài đặt thư viện hỗ trợ input search
 
 Sử dụng tippy để tạo popper
     headless
+
+Custom Images error
+    https://via.placeholder.com/100.png?text=No+Image
