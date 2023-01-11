@@ -186,3 +186,5 @@ Sử dụng tippy để tạo popper
 
 Custom Images error
     https://via.placeholder.com/100.png?text=No+Image
+
+Kỹ thuật Debounce: kỹ thuật nói về các hành động diễn ra liên tục.
