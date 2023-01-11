@@ -6,11 +6,11 @@ import GlobleStyles from './components/GlobleStyles';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-    <React.StrictMode>
-        <GlobleStyles>
-            <App />
-        </GlobleStyles>
-    </React.StrictMode>,
+    // <React.StrictMode>
+    <GlobleStyles>
+        <App />
+    </GlobleStyles>,
+    // </React.StrictMode>,
 );
 
 // If you want to start measuring performance in your app, pass a function
