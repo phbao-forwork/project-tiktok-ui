@@ -4,28 +4,29 @@ import Following from '~/pages/Following';
 import Profile from '~/pages/Profile';
 import Upload from '~/pages/Upload';
 import Search from '~/pages/Search';
+import routeConfig from '~/Config/routes';
 
 // dùng cho những router không cần đăng nhập vẫn có thể xem được
 const publicRoutes = [
     {
-        path: '/',
+        path: routeConfig.home,
         component: Home,
     },
     {
-        path: '/following',
+        path: routeConfig.following,
         component: Following,
     },
     {
-        path: '/:nickname',
+        path: routeConfig.profile,
         component: Profile,
     },
     {
-        path: '/upload',
+        path: routeConfig.upload,
         component: Upload,
         layout: HeaderOnly,
     },
     {
-        path: '/search',
+        path: routeConfig.search,
         component: Search,
         layout: null,
     },

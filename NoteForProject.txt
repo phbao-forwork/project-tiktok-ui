@@ -188,3 +188,10 @@ Custom Images error
     https://via.placeholder.com/100.png?text=No+Image
 
 Kỹ thuật Debounce: kỹ thuật nói về các hành động diễn ra liên tục.
+
+Tải Axios về để config API
+    => npm instal axios
+
+    - Creating an instance
+
+    Cấu hình axios cho dự án
