@@ -49,6 +49,13 @@ function Seacrch() {
         fetchApi();
     }, [debounced]);
 
+    const handleChange = (e) => {
+        const seacrchValue = e.target.value;
+        if (!seacrchValue.startsWith(' ')) {
+            setSearchValue(e.target.value);
+        }
+    };
+
     return (
         <HeadlessTippy
             interactive={true} // cho phép tương tác với tippy
@@ -71,7 +78,7 @@ function Seacrch() {
                     value={searchValue}
                     placeholder="Search accounts and videos"
                     spellCheck={false}
-                    onChange={(e) => setSearchValue(e.target.value)}
+                    onChange={handleChange}
                     onFocus={(e) => setShowResult(true)}
                 />
                 {!!searchValue && !loading && (
@@ -81,7 +88,7 @@ function Seacrch() {
                 )}
 
                 {loading && <FontAwesomeIcon className={cx('loading')} icon={faSpinner} />}
-                <button className={cx('search-btn')}>
+                <button className={cx('search-btn')} onMouseDown={(e) => e.preventDefault()}>
                     <FontAwesomeIcon icon={faMagnifyingGlass} />
                 </button>
             </div>

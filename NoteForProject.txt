@@ -194,4 +194,51 @@ Tải Axios về để config API
 
     - Creating an instance
 
-    Cấu hình axios cho dự án
+Cấu hình axios cho dự án
+    
+    Tạo các instance:
+        Các cấu hình của axios được viết trong utils
+            Ở thư mục src/ tạo thư mục utils/
+                Trong thư mục utils/ tạo file request.js
+                    Example: 
+                        import axios from 'axios';
+
+                        const request = axios.create({
+                            baseURL: 'https://tiktok.fullstack.edu.vn/api/',
+                        });
+
+                        // custom method get
+                        export const get = async (path, options = {}) => {
+                            const response = await request.get(path, options);
+                            return response.data;
+                        }
+                        // when you call this method, it will return a promies
+
+                        export default request;
+                
+        Các phần thực hiện gọi API được viết code riêng nằm trong thư mục services
+            Trong thư mục src/ tạo thư mục services/
+                Trong thư mục services/ tạo các file cấu hình phù hợp với từng chức năng.
+                    Example:
+                        import * as request from '~/Utils/request';
+
+                        export const search = async (q, type = 'less') => {
+                            try {
+                                const res = await request.get('users/search', {
+                                    params: {
+                                        q,
+                                        type: 'less',
+                                    },
+                                });
+                                return res.data;
+                            } catch (error) {
+                                console.log(error);
+                            }
+                        };
+
+        Sử dụng:
+
+        const fetchApi = async () => {
+            const result = await search(debounced);
+            ...
+        };

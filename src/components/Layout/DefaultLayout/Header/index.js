@@ -22,6 +22,7 @@ import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
 import Image from '~/components/Image';
 import Seacrch from '../Search';
+import routeConfig from '~/Config/routes';
 
 // trả ra một function cx()
 const cx = classNames.bind(styles);
@@ -97,7 +98,7 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <Link to="/" className={cx('logo-link')}>
+                <Link to={routeConfig.home} className={cx('logo-link')}>
                     <img src={images.logo} alt="tiktok" />
                 </Link>
                 <Seacrch />
@@ -124,6 +125,7 @@ function Header() {
                                 className={cx('user-avatar')}
                                 src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/b29b52a6cbffbf50e88b575f8f358583~c5_100x100.jpeg?x-expires=1673596800&x-signature=p%2F8RSjfDIe7slgOiE%2BLjot%2F3svY%3D"
                                 alt="Nguyen Thi Cam Ly"
+                                hideOnClick={false}
                             />
                         ) : (
                             <button className={cx('more-btn')}>

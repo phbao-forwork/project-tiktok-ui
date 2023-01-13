@@ -8,7 +8,7 @@ import { useState } from 'react';
 
 const cx = classNames.bind(style);
 
-function Menu({ items, children, onChange = () => {} }) {
+function Menu({ items, children, hideOnClick, onChange = () => {} }) {
     const [history, setHistory] = useState([{ data: items }]);
     const current = history[history.length - 1];
 
@@ -37,6 +37,7 @@ function Menu({ items, children, onChange = () => {} }) {
             interactive={true} // cho phép tương tác với Tippy
             placement="bottom-end"
             offset={[12, 8]}
+            hideOnClick={hideOnClick}
             render={(attrs) => (
                 <div className={cx('menu-list')} tabIndex="-1" {...attrs}>
                     <PopperWrapper className={cx('menu-popper')}>
