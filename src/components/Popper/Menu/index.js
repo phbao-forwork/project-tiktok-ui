@@ -8,7 +8,7 @@ import { useState } from 'react';
 
 const cx = classNames.bind(style);
 
-function Menu({ items, children, hideOnClick, onChange = () => {} }) {
+function Menu({ items, children, hideOnClick = false, onChange = () => {} }) {
     const [history, setHistory] = useState([{ data: items }]);
     const current = history[history.length - 1];
 
@@ -47,7 +47,7 @@ function Menu({ items, children, hideOnClick, onChange = () => {} }) {
                                 onBack={() => setHistory((prev) => prev.slice(0, prev.length - 1))}
                             />
                         )}
-                        {renderItems()}
+                        <div className={cx('menu-body')}>{renderItems()}</div>
                     </PopperWrapper>
                 </div>
             )}

@@ -119,13 +119,12 @@ function Header() {
                             <Button primary>Log in</Button>
                         </>
                     )}
-                    <Menu items={currentUser ? userMenus : MENU_ITEMS} onChange={handleMenuChange}>
+                    <Menu items={currentUser ? userMenus : MENU_ITEMS} hideOnClick={false} onChange={handleMenuChange}>
                         {currentUser ? (
                             <Image
                                 className={cx('user-avatar')}
                                 src="https://p16-sign-va.tiktokcdn.com/tos-useast2a-avt-0068-giso/b29b52a6cbffbf50e88b575f8f358583~c5_100x100.jpeg?x-expires=1673596800&x-signature=p%2F8RSjfDIe7slgOiE%2BLjot%2F3svY%3D"
                                 alt="Nguyen Thi Cam Ly"
-                                hideOnClick={false}
                             />
                         ) : (
                             <button className={cx('more-btn')}>
