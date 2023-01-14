@@ -22,7 +22,7 @@ import Button from '~/components/Button';
 import Menu from '~/components/Popper/Menu';
 import Image from '~/components/Image';
 import Seacrch from '../Search';
-import routeConfig from '~/Config/routes';
+import config from '~/config';
 
 // trả ra một function cx()
 const cx = classNames.bind(styles);
@@ -98,7 +98,7 @@ function Header() {
     return (
         <header className={cx('wrapper')}>
             <div className={cx('inner')}>
-                <Link to={routeConfig.home} className={cx('logo-link')}>
+                <Link to={config.routes.home} className={cx('logo-link')}>
                     <img src={images.logo} alt="tiktok" />
                 </Link>
                 <Seacrch />

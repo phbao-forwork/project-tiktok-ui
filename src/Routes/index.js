@@ -1,32 +1,30 @@
-import { HeaderOnly } from '~/components/Layout';
 import Home from '~/pages/Home';
 import Following from '~/pages/Following';
 import Profile from '~/pages/Profile';
 import Upload from '~/pages/Upload';
 import Search from '~/pages/Search';
-import routeConfig from '~/Config/routes';
+import config from '~/config';
 
 // dùng cho những router không cần đăng nhập vẫn có thể xem được
 const publicRoutes = [
     {
-        path: routeConfig.home,
+        path: config.routes.home,
         component: Home,
     },
     {
-        path: routeConfig.following,
+        path: config.routes.following,
         component: Following,
     },
     {
-        path: routeConfig.profile,
+        path: config.routes.profile,
         component: Profile,
     },
     {
-        path: routeConfig.upload,
+        path: config.routes.upload,
         component: Upload,
-        layout: HeaderOnly,
     },
     {
-        path: routeConfig.search,
+        path: config.routes.search,
         component: Search,
         layout: null,
     },
