@@ -242,3 +242,10 @@ Cấu hình axios cho dự án
             const result = await search(debounced);
             ...
         };
+
+Proptype
+    propTypes giúp dễ dàng kiểm soát các kiểu dữ liệu của các props hơn
+
+    npm install --save prop-types
+
+    Với create-react-app thư viện này đã được cài sẵn.
