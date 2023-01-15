@@ -19,7 +19,7 @@ function Seacrch() {
     const [showResult, setShowResult] = useState(true);
     const [loading, setLoading] = useState(false);
 
-    const debounced = useDebounce(searchValue, 500);
+    const debouncedValue = useDebounce(searchValue, 500);
 
     const inputRef = useRef();
 
@@ -34,20 +34,20 @@ function Seacrch() {
     };
 
     useEffect(() => {
-        if (!debounced.trim()) {
+        if (!debouncedValue.trim()) {
             setSearchResult([]);
             return;
         }
 
         const fetchApi = async () => {
             setLoading(true);
-            const result = await search(debounced);
+            const result = await search(debouncedValue);
             setSearchResult(result);
             setLoading(false);
         };
 
         fetchApi();
-    }, [debounced]);
+    }, [debouncedValue]);
 
     const handleChange = (e) => {
         const seacrchValue = e.target.value;
