@@ -18,12 +18,12 @@
 
     Sau khi cài đặt tạo file root/config-overrides.js với nội dung sau:
 
-          /* config-overrides.js */
+        /* config-overrides.js */
 
-          module.exports = function override(config, env) {
-              //do stuff with the webpack config...
-              return config;
-          }
+        module.exports = function override(config, env) {
+            //do stuff with the webpack config...
+            return config;
+        }
 
 -   Thay đổi file package.json như sau:
     (- remove, + add)
@@ -66,7 +66,7 @@
             "compilerOptions": {
                 "baseUrl": ".",
                 "paths": {
-                    "~/*": ["src/*"],
+                    "~/*": ["src/*"]
                 }
             }
         }
